@@ -1,22 +1,21 @@
 package io.github.ndimovt;
 
+import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-
-public class Plane {
-    private FileReader fr;
-    private BufferedReader bfr;
-    public void readFiile() {
+public class AirbusA320 extends Plane{
+    private FileReader fileReaderr;
+    private BufferedReader bufferedReader;
+    public void readFile(){
         try {
-            fr = new FileReader("C:\\Users\\Nikolai\\IdeaProjects\\flightreservation\\src\\main\\java\\io\\github\\ndimovt\\planefiles\\defPlane.txt");
-            bfr = new BufferedReader(fr);
+            fileReaderr = new FileReader("C:\\Users\\Nikolai\\IdeaProjects\\flightreservation\\src\\main\\java\\io\\github\\ndimovt\\planefiles\\AirbusA320.txt");
+            bufferedReader = new BufferedReader(fileReaderr);
             String line;
-            while((line = bfr.readLine()) != null){
+            while((line = bufferedReader.readLine()) != null){
                 System.out.println(line);
             }
-            close(fr,bfr);
+            close(fileReaderr, bufferedReader);
         }catch (FileNotFoundException fne){
             fne.printStackTrace();
         }catch (IOException ie){
@@ -31,5 +30,5 @@ public class Plane {
             bfr.close();
         }
     }
-
 }
+

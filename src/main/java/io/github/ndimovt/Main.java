@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner inn = new Scanner(System.in);
-        new Plane(20);
+        Plane airbus = new AirbusA320();
+        ((AirbusA320) airbus).readFile();
         boolean isTrue = true;
         while (isTrue) {
             System.out.println("1) Reserve place 2) Check passenger list 3) Exit");
@@ -14,14 +15,18 @@ public class Main {
             switch (choice){
                 case 1:
                     System.out.println("Enter seat");
-                    String seat = inn.next();
-                    SeatReservation r = new SeatReservation(seat);
-                    Thread t = new Thread(r);
-                    t.start();
-                    try {
-                        Thread.sleep(10000);
-                    } catch (InterruptedException ie) {
+                    String seat = inn.nextLine();
+                    if (FlightInformation.getRes().containsKey(seat)) {
+                        System.out.println("Seat already reserved! Please chose another one.");
+                    }else {
+                        SeatReservation seatReservation = new SeatReservation(seat);
+                        Thread t = new Thread(seatReservation);
+                        t.start();
+                        try {
+                            Thread.sleep(100000);
+                        } catch (InterruptedException ie) {
                             ie.printStackTrace();
+                        }
                     }
                     break;
                 case 2:
@@ -36,5 +41,4 @@ public class Main {
             }
         }
     }
-
 }

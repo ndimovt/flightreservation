@@ -8,18 +8,23 @@ public class SeatReservation implements Runnable{
     public SeatReservation(String seat) {
         this.seat = seat;
     }
-
     public void run(){
         synchronized (seat) {
-            if (FlightInformation.getRes().containsKey(seat)) {
-                System.out.println("Seat already reserved! Please chose another one.");
-            } else {
-                System.out.println("Enter your name");
-                String name = inn.nextLine();
-                FlightInformation.getRes().put(seat, name);
-                System.out.println(seat + " Successfully reserved.");
-            }
+            System.out.println("Enter your name");
+            String firstName = inn.nextLine();
+            System.out.println("Enter your father name");
+            String fatherName = inn.nextLine();
+            System.out.println("Enter your surname");
+            String surname = inn.nextLine();
+            Human passenger = new Passenger(firstName, fatherName, surname, seat, code());
+            FlightInformation.getRes().put(seat, (Passenger)passenger);
+            passenger = null;
+            System.out.println(seat + " Successfully reserved.");
         }
     }
+    private int code(){
+        return (int) (Math.random()*999999999);
+    }
+
 
 }
