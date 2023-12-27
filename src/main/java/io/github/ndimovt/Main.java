@@ -1,12 +1,15 @@
 package io.github.ndimovt;
 
+import io.github.ndimovt.planes.AirbusA220;
+import io.github.ndimovt.planes.Plane;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner inn = new Scanner(System.in);
-        Plane airbus = new AirbusA320();
-        ((AirbusA320) airbus).readFile();
+        Plane airbusA220 = new AirbusA220();
+        airbusA220.read();
         boolean isTrue = true;
         while (isTrue) {
             System.out.println("1) Reserve place 2) Check passenger list 3) Exit");

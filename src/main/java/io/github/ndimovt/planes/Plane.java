@@ -1,14 +1,16 @@
-package io.github.ndimovt;
+package io.github.ndimovt.planes;
+
+import io.github.ndimovt.ReadFile;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Plane {
+public class Plane implements ReadFile {
     private FileReader fr;
     private BufferedReader bfr;
-    public void readFiile() {
+    public void read() {
         try {
             fr = new FileReader("C:\\Users\\Nikolai\\IdeaProjects\\flightreservation\\src\\main\\java\\io\\github\\ndimovt\\planefiles\\defPlane.txt");
             bfr = new BufferedReader(fr);
@@ -16,19 +18,25 @@ public class Plane {
             while((line = bfr.readLine()) != null){
                 System.out.println(line);
             }
-            close(fr,bfr);
         }catch (FileNotFoundException fne){
             fne.printStackTrace();
         }catch (IOException ie){
             ie.printStackTrace();
         }
-    }
-    private void close(FileReader fr, BufferedReader bfr) throws IOException{
-        if(fr != null){
-            fr.close();
+        finally {
+            close(fr,bfr);
         }
-        if(bfr != null){
-            bfr.close();
+    }
+    private void close(FileReader fr, BufferedReader bfr){
+        try {
+            if (fr != null) {
+                fr.close();
+            }
+            if (bfr != null) {
+                bfr.close();
+            }
+        } catch (IOException ie) {
+            ie.printStackTrace();
         }
     }
 

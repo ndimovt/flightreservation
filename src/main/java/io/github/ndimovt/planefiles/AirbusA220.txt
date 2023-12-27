@@ -1,0 +1,38 @@
+First Class
+
+A|B  1   C|D
+A|B  2   C|D
+A|B  3   C|D
+
+Delta+
+
+A|B   4   D|E|F
+A|B   5   D|E|F
+A|B   6   D|E|F
+A|B   7   D|E|F
+A|B   8   D|E|F
+A|B   9   D|E|F
+A|B   10   D|E|F
+A|B   11   D|E|F
+A|B   12   D|E|F
+A|B   13   D|E|F
+A|B   14   D|E|F
+A|B   15   D|E|F
+A|B   16   D|E|F
+A|B   17   D|E|F
+A|B   18   D|E|F
+A|B   19   D|E|F
+A|B   20   D|E|F
+A|B   21   D|E|F
+A|B   22   D|E|F
+A|B   23   D|E|F
+A|B   24   D|E|F
+A|B   25   D|E|F
+A|B   26   D|E|F
+A|B   27   D|E|F
+A|B   28   D|E|F
+A|B   29   D|E|F
+A|B   30   D|E|F
+A|B   31   D|E|F
+A|B   32   D|E|F
+A|B   33   D|E|F
