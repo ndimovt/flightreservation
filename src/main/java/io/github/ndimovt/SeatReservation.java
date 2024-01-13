@@ -18,13 +18,10 @@ public class SeatReservation implements Runnable{
             String surname = inn.nextLine();
             Human passenger = new Passenger(firstName, fatherName, surname, seat, code());
             FlightInformation.getRes().put(seat, (Passenger)passenger);
-            passenger = null;
             System.out.println(seat + " Successfully reserved.");
         }
     }
     private int code(){
         return (int) (Math.random()*999999999);
     }
-
-
 }
