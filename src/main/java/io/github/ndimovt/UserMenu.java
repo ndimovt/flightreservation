@@ -3,6 +3,8 @@ package io.github.ndimovt;
 import io.github.ndimovt.planes.AirbusA220;
 import io.github.ndimovt.planes.AirbusA320;
 import io.github.ndimovt.planes.Plane;
+import io.github.ndimovt.reservation.FlightInformation;
+import io.github.ndimovt.reservation.SeatReservation;
 
 import java.util.Scanner;
 

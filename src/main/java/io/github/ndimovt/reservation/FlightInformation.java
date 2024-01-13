@@ -1,4 +1,6 @@
-package io.github.ndimovt;
+package io.github.ndimovt.reservation;
+
+import io.github.ndimovt.Passenger;
 
 import java.util.HashMap;
 

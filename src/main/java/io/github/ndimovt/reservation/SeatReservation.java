@@ -1,4 +1,7 @@
-package io.github.ndimovt;
+package io.github.ndimovt.reservation;
+
+import io.github.ndimovt.Human;
+import io.github.ndimovt.Passenger;
 
 import java.util.Scanner;
 
